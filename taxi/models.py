@@ -14,6 +14,10 @@ class Manufacturer(models.Model):
 class Driver(AbstractUser):
     license_number = models.CharField(max_length=255, unique=True)
 
+    class Meta:
+        verbose_name = "Driver"
+        verbose_name_plural = "Drivers"
+
     def __str__(self) -> str:
         return f"Driver: {self.first_name} {self.last_name} {self.license_number}"
 
